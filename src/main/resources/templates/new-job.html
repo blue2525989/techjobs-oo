@@ -25,7 +25,34 @@
             </select>
         </div>
 
-        <!-- TODO #5 - Create <select> dropdowns for other job fields -->
+        <!-- TODO #5 - Create <select> drop downs for other job fields -->
+        
+         <div class="form-group">
+            <label for="locationId">Location</label>
+            <select th:field="*{locationId}">
+                <option th:each="location : *{locations}"
+                        th:value="${location.id}"
+                        th:text="${location}"></option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="coreCompetencyId">Skill</label>
+            <select th:field="*{coreCompetencyId}">
+                <option th:each="core : *{coreCompetencies}"
+                        th:value="${core.id}"
+                        th:text="${core}"></option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="postionTypeId">Position Type</label>
+            <select th:field="*{positionTypeId}">
+                <option th:each="pos : *{positionTypes}"
+                        th:value="${pos.id}"
+                        th:text="${pos}"></option>
+            </select>
+        </div>
 
         <input type="submit" value="Add Job" />
     </form>
